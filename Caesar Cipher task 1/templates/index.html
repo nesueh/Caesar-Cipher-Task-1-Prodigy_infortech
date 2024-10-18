@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encrypt/Decrypt</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Encrypt/Decrypt Message</h1>
+        </header>
+        <form method="POST">
+            <label for="message">Message:</label>
+            <input type="text" id="message" name="message" required>
+            <label for="shift">Shift:</label>
+            <input type="number" id="shift" name="shift" required>
+            <input type="submit" name="action" value="Encrypt">
+            <input type="submit" name="action" value="Decrypt">
+        </form>
+        {% if result %}
+        <div>
+            <h2>Result:</h2>
+            <p>{{ result }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
